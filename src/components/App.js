@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import '../styles/App.css';
 import { UserProfile } from './UserProfile';
 
-
+const UserContext=createContext();
 const App = () => {
-
+  
   return (
     <div id="main">
-      
-        <UserProfile />
+        <UserContext.Provider value={{name:"Newton", age:3}}>
+
+       
+         <UserProfile />
+         </UserContext.Provider>
+       
       
     </div>
   )
